@@ -3,7 +3,7 @@
 import base64
 import requests
 import bibtexparser
-from IPython.display import HTML
+from IPython.display import display, HTML
 
 
 class Works:
@@ -177,7 +177,9 @@ class Works:
         bib64 = base64.b64encode(formatted_bib.encode("utf-8")).decode("utf8")
         uri = f'<pre>{formatted_bib}<pre><br><a href="data:text/plain;base64,\
                 {bib64}" download="bibtex">Download bibtex</a>'
-        return HTML(uri)
+
+        display(HTML(uri))
+        return formatted_bib
 
     @property
     def ris(self):
@@ -208,4 +210,6 @@ class Works:
         ris64 = base64.b64encode(ris.encode("utf-8")).decode("utf8")
         uri = f'<pre>{ris}<pre><br><a href="data:text/plain;base64,\
                 {ris64}" download="ris">Download RIS</a>'
-        return HTML(uri)
+
+        display(HTML(uri))
+        return ris
