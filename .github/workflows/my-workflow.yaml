@@ -1,0 +1,13 @@
+name: My job
+on: push
+
+jobs:
+
+  run black:
+    runs-on: ubuntu-latest
+    steps:      
+      - uses: actions/checkout@v3
+      - run: |
+          pip install black
+          black --check .
+
