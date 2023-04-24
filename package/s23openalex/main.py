@@ -8,23 +8,27 @@ from .works import Works
 @click.command(help="OpenAlex Institutions")
 @click.argument("doi")
 @click.option(
-    "-t",
-    "--type",
-    type=click.Choice(["bibtex", "ris"]),
-    default="bibtex",
-    help="Output format (bibtex or ris)",
+    "-b",
+    "--bibtex",
+    is_flag=True,
+    help="Output in BibTeX format",
 )
-def main(doi, type):
+@click.option(
+    "-r",
+    "--ris",
+    is_flag=True,
+    help="Output in RIS format",
+)
+def main(doi, bibtex, ris):
     """Convert DOI to BibTeX or RIS format"""
 
-    mywork = Works(doi)
-    if type == "bibtex":
+    if bibtex:
+        mywork = Works(doi)
         output = mywork.bibtex
-    elif type == "ris":
+    elif ris:
+        mywork = Works(doi)
         output = mywork.ris
+    else:
+        click.echo("Please specify an output format (-b/--bibtex or -r/--ris)")
 
     click.echo(output)
-
-
-if __name__ == "__main__":
-    main()

@@ -11,6 +11,6 @@ setup(
     maintainer_email="ruiyingc@andrew.cmu.edu",
     license="MIT",
     packages=["s23openalex"],
-    scripts=[],
+    entry_points={"console_scripts": ["oa = s23openalex.main:main"]},
     long_description="""A set of openalex utilities""",
 )

@@ -1,5 +1,7 @@
+"""
+The work class.
+"""
 #!/usr/bin/env python
-"""Module providingFunction printing python version."""
 import base64
 import requests
 import bibtexparser
@@ -84,8 +86,10 @@ class Works:
         oa_id = self.data["id"]
 
         # combine all information and form a string
-        string = f'{authors}{title}, {volume}{issue}{pages}({year}), \
-                   {self.data["doi"]}. cited by: {citedby}. {oa_id}'
+        string = (
+            f"{authors}{title}, {volume}{issue}{pages}({year}), "
+            f'{self.data["doi"]}. cited by: {citedby}. {oa_id}'
+        )
 
         return string
 
