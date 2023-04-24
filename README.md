@@ -6,4 +6,5 @@ This repository is hosted for s23 06-682 final project.
 
 ## Installation
 cd package
+
 pip install .
