@@ -5,7 +5,7 @@ from s23openalex import Works
 
 
 BIBTEX = """@article{kitchin-2015-examples,
- authors = {John R. Kitchin, },
+ authors = {John R. Kitchin},
  doi = {10.1021/acscatal.5b00538},
  journal = {ACS Catalysis},
  number = {6},

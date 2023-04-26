@@ -105,7 +105,7 @@ class Works:
 
         # deal with different number of authors
         if len(_authors) == 1:
-            authors = _authors[0] + ", "
+            authors = _authors[0]
         elif len(_authors) == 0:
             authors = ""
         else:
